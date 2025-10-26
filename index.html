@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Dimas Prayogi - Pelajar SMK RPL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav id="navbar">
+    <h1>Dimas Prayogi</h1>
+    <ul>
+      <li><a href="#about" class="active">Tentang</a></li>
+      <li><a href="#skills">Keahlian</a></li>
+      <li><a href="#projects">Proyek</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="hero-content">
+      <div class="profile-photo">
+        <img src="img/IMG-20251008-WA0030.jpg" alt="Foto Profil Dimas Prayogi">
+      </div>
+      <h1>Dimas Prayogi</h1>
+      <p>Pelajar SMK RPL | Web Developer & Penulis Teknologi</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>Tentang Saya</h2>
+      <p>
+        Saya pelajar SMK jurusan Rekayasa Perangkat Lunak (RPL) yang bersemangat dalam membangun solusi digital.
+        Saya menikmati proses merancang antarmuka web yang estetis dan fungsional, serta menulis konten edukatif
+        seputar teknologi dan pengembangan diri. Saat ini sedang mengembangkan sistem absensi berbasis web dengan
+        fitur login berbasis peran dan visualisasi data.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Keahlian</h2>
+      <div class="skills">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>PHP</span>
+        <span>MySQL</span>
+        <span>Desain Web</span>
+        <span>Penulisan Artikel</span>
+        <span>SEO Dasar</span>
+        <span>Git & GitHub</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Proyek Unggulan</h2>
+
+      <div class="project">
+        <h3>Website Portofolio Pribadi</h3>
+        <p>
+          Antarmuka futuristik dengan efek glassmorphism dan neon glow, dibuat sepenuhnya dengan HTML, CSS, dan JavaScript.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Sistem Absensi Digital (Kelas 11 RPL)</h3>
+        <p>
+          Aplikasi berbasis PHP dengan autentikasi role-based (admin & siswa), manajemen data CRUD, dan grafik kehadiran menggunakan Chart.js.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Artikel: "Memanfaatkan Teknologi untuk Belajar Efektif"</h3>
+        <p>
+          Artikel edukatif yang membahas pemanfaatan AI, LMS, dan tools digital untuk meningkatkan produktivitas belajar siswa.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>📧 Email: <a href="mailto:dimassprayogi263@gmail.com">dimassprayogi263@gmail.com</a> | 💼 Instagram: <a href="https://www.instagram.com/dimzpray_?igsh=eW8wd20xMmE4d2Fn" target="_blank">@dimzpray_</a></p>
+    <p>© 2025 Dimas Prayogi. Semua hak dilindungi.</p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        window.scrollTo({
+          top: targetSection.offsetTop - 70,
+          behavior: 'smooth'
+        });
+
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
